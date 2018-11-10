@@ -8,6 +8,7 @@ const Schema = mongoose.Schema;
 const CommentsSchema = new Schema({
   author: String,
   text: String,
+  description: String,
 }, { timestamps: true });
 
 // export our module to use in server.js
