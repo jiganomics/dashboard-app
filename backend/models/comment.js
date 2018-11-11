@@ -9,6 +9,7 @@ const CommentsSchema = new Schema({
   author: String,
   text: String,
   description: String,
+  place: String,
 }, { timestamps: true });
 
 // export our module to use in server.js
