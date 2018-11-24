@@ -135,21 +135,12 @@ CommentBox.propTypes = {
   actions: PropTypes.object.isRequired,
 };
 
-/* istanbul ignore next */
-function mapStateToProps(state) {
-  return {
-    examples: state.examples,
-  };
-}
+const mapStateToProps = state => ({
+  examples: state.examples,
+});
 
-/* istanbul ignore next */
-function mapDispatchToProps(dispatch) {
-  return {
-    actions: bindActionCreators({ ...actions }, dispatch)
-  };
-}
+const mapDispatchToProps = dispatch => ({
+  actions: bindActionCreators({ ...actions }, dispatch)
+});
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(CommentBox);
+export default connect(mapStateToProps, mapDispatchToProps)(CommentBox);

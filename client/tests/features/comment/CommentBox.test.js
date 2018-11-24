@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { CommentBox } from '../../../src/features/examples/CommentBox';
+import { CommentBox } from '../../../src/features/comment/CommentBox';
 
-describe('examples/CommentBox', () => {
+describe('comment/CommentBox', () => {
   it('renders node with correct class name', () => {
     const props = {
       examples: {},
@@ -13,7 +13,7 @@ describe('examples/CommentBox', () => {
     );
 
     expect(
-      renderedComponent.find('.examples-comment-box').length
+      renderedComponent.find('.comment-comment-box').length
     ).toBe(1);
   });
 });
