@@ -22,18 +22,36 @@ export class CheckbookForm extends Component {
         <form onSubmit={submitComment}>
           <input
             type="text"
-            name="author"
-            placeholder="Your name…"
+            name="date"
+            placeholder="Date…"
             value={author}
             onChange={handleChangeText}
           />
+          <br/>
           <input
             type="text"
-            name="text"
-            placeholder="Say something..."
-            value={text}
+            name="payee"
+            placeholder="Payee…"
+            value={author}
             onChange={handleChangeText}
           />
+          <br/>
+          <input
+            type="text"
+            name="category"
+            placeholder="Category…"
+            value={author}
+            onChange={handleChangeText}
+          />
+          <br/>
+          <input
+            type="text"
+            name="amount"
+            placeholder="Amount…"
+            value={author}
+            onChange={handleChangeText}
+          />
+          <br/>
           <button type="submit">Submit</button>
         </form>
       </div>

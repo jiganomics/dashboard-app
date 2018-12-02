@@ -21,7 +21,7 @@ export function checking(args = {}) {
       // doRequest is a placeholder Promise. You should replace it with your own logic.
       // See the real-word example at:  https://github.com/supnate/rekit/blob/master/src/features/home/redux/fetchRedditReactjsList.js
       // args.error here is only for test coverage purpose.
-      const doRequest = fetch('/api/comments/')
+      const doRequest = fetch('/api/transactions/')
 
       doRequest.then(data => data.json())
         .then((res) => {
@@ -55,6 +55,8 @@ export function dismissCheckingError() {
 }
 
 export function reducer(state, action) {
+  console.log('state: ', state);
+  console.log('action: ', action);
   switch (action.type) {
     case CHECKBOOK_CHECKING_BEGIN:
       // Just after a request is sent
@@ -69,7 +71,6 @@ export function reducer(state, action) {
       return {
         ...state,
         transactions: action.data.data,
-
         checkingPending: false,
         checkingError: null,
       };

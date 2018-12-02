@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from './redux/actions';
+import ReactTable from 'react-table';
+import 'react-table/react-table.css';
 
 class Checkbook extends Component {
   componentDidMount() {
@@ -12,6 +14,7 @@ class Checkbook extends Component {
 
   render() {
     const {
+      data,
       author,
       text,
       submitComment,
@@ -24,11 +27,43 @@ class Checkbook extends Component {
     } = this.props;
     return (
       <div className="checkbook-checkbook">
+      <ReactTable
+          data={transactions}
+          columns={[
+            {
+              Header: "Date",
+              accessor: "date"
+            },
+            {
+              Header: "C",
+              id: "lastName",
+              accessor: d => d.lastName
+            },
+            {
+              Header: "Payee",
+              accessor: "payee"
+            },
+            {
+              Header: "Category",
+              accessor: "category"
+            },
+            {
+              Header: "Amount",
+              accessor: "amount"
+            },
+            {
+              Header: "Balance",
+              accessor: "visits"
+            }
+          ]}
+          defaultPageSize={20}
+          className="-striped -highlight"
+        />
         {transactions && transactions.length > 0 ? (
           <ul className="examples-reddit-list">
             {transactions.map(item => (
               <li key={item._id}>
-                <a href={item.author}>{item.text}</a>
+                <a href={item.author}>{item.payee}</a>
               </li>
             ))}
           </ul>
