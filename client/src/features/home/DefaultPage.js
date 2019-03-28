@@ -25,6 +25,10 @@ export class DefaultPage extends Component {
           <h3>To get started:</h3>
           <ul>
             <li>
+              To see finances, access:&nbsp;
+              <Link to="/finances">/finances</Link>
+            </li>
+            <li>
               To see documents, access:&nbsp;
               <Link to="/documents">/documents</Link>
             </li>

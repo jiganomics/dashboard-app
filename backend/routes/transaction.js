@@ -1,5 +1,4 @@
 import Transaction from "../models/transaction";
-import Comment from "../models/comment";
 
 export const getTransactions = (req, res) => {
     Transaction.find((err, transaction) => {

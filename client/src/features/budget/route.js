@@ -1,14 +1,11 @@
-// This is the JSON way to define React Router rules in a Rekit app.
-// Learn more from: http://rekit.js.org/docs/routing.html
-
-import {
-  DefaultPage,
-} from './';
+import { Budget } from './';
+import Layout from '../finance/Layout';
 
 export default {
   path: 'budget',
   name: 'Budget',
+  component: Layout,
   childRoutes: [
-    { path: 'default-page', name: 'Default page', component: DefaultPage, isIndex: true },
+    { path: '', name: 'Budget', component: Budget },
   ],
 };

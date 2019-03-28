@@ -1,19 +1,19 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { DefaultPage } from '../../../src/features/budget/DefaultPage';
+import { HomePage } from '../../../src/features/finance/HomePage';
 
-describe('budget/DefaultPage', () => {
+describe('finance/HomePage', () => {
   it('renders node with correct class name', () => {
     const props = {
-      budget: {},
+      finance: {},
       actions: {},
     };
     const renderedComponent = shallow(
-      <DefaultPage {...props} />
+      <HomePage {...props} />
     );
 
     expect(
-      renderedComponent.find('.budget-default-page').length
+      renderedComponent.find('.finance-home-page').length
     ).toBe(1);
   });
 });

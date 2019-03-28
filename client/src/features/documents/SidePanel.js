@@ -19,10 +19,13 @@ export class SidePanel extends Component {
             <Link to="/inventory">Dashboard</Link>
           </li>
           <li>
-            <Link to="/comment/comments">Comments</Link>
+            <Link to="/budget">Budget</Link>
           </li>
           <li>
             <Link to="/checkbook">Checkbook</Link>
+          </li>
+          <li>
+            <Link to="/comment/comments">Comments</Link>
           </li>
           <li>
             <Link to="/examples/counter">Counter Demo</Link>

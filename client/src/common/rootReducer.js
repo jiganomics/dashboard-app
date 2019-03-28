@@ -7,6 +7,7 @@ import commentReducer from '../features/comment/redux/reducer';
 import budgetReducer from '../features/budget/redux/reducer';
 import checkbookReducer from '../features/checkbook/redux/reducer';
 import documentsReducer from '../features/documents/redux/reducer';
+import financeReducer from '../features/finance/redux/reducer';
 
 // NOTE 1: DO NOT CHANGE the 'reducerMap' name and the declaration pattern.
 // This is used for Rekit cmds to register new features, remove features, etc.
@@ -22,6 +23,7 @@ const reducerMap = {
   budget: budgetReducer,
   checkbook: checkbookReducer,
   documents: documentsReducer,
+  finance: financeReducer,
 };
 
 export default combineReducers(reducerMap);
