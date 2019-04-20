@@ -114,6 +114,6 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "proxy": "http://localhost:6001",
+  "proxy": "http://localhost:3001",
   "description": "rekit-counter created by Rekit."
 }
