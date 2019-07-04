@@ -6,11 +6,15 @@ class BudgetGroup extends Component {
   render() {
     const {
       group,
+      //data,
     } = this.props;
     return ([
       <BudgetGroupHeader name={group.name} type={group.type} />,
       group.categories.map((category, idx) => {
         return (<BudgetCategory category={category} idx={idx} />)
+      /*
+        return (<BudgetCategory category={category} data={data[category.id]} idx={idx} />)
+      */
       })
     ]);
   }

@@ -1,18 +1,25 @@
 import React, { Component } from 'react';
-import { months } from './constants';
+import PropTypes from 'prop-types';
 
 class CategoryData extends Component {
   render() {
+    const {
+      data,
+    } = this.props;
     return (
-      months.map((month, idx) => {
+      data.map(x => {
         return ([
-          <td>0</td>,
-          <td>0</td>,
-          <td>0</td>
+          <td>{x.budget}</td>,
+          <td>{x.actual}</td>,
+          <td>{x.diff}</td>
         ])
       })
     );
   }
 }
+
+CategoryData.propTypes = {
+  data: PropTypes.array.isRequired,
+};
 
 export default CategoryData;

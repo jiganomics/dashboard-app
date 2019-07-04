@@ -6,8 +6,10 @@ import bodyParser from 'body-parser';
 import logger from 'morgan';
 import mongoose from 'mongoose';
 import { getSecret } from './secrets';
-import { getBudgetGroups } from './routes/budgetGroups';
+import { getBudgetGroups } from './routes/budgetGroup';
+import { getCategories } from './routes/category';
 import { getComments, createComment, updateComment, deleteComment } from './routes/comment';
+import { getBudgetData, getBudgetData2 } from './routes/budget';
 import { getTransactions } from './routes/transaction';
 
 // and create our instances
@@ -35,12 +37,16 @@ router.get('/', (req, res) => {
 
 router.get('/budgetGroups', getBudgetGroups);
 
+router.get('/categories', getCategories);
+
 router.get('/comments', getComments);
 router.post('/comments', createComment);
 router.put('/comments/:commentId', updateComment);
 router.delete('/comments/:commentId', deleteComment);
 
 router.get('/transactions', getTransactions);
+router.get('/budgetData', getBudgetData);
+router.get('/budgetData2', getBudgetData2);
 
 // Use our router configuration when we call /api
 app.use('/api', router);

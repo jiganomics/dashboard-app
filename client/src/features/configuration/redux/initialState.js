@@ -6,16 +6,6 @@
 
 // NOTE: initialState constant is necessary so that Rekit could auto add initial state when creating async actions.
 const initialState = {
-  budgetGroups: [],
-  data: {
-    "i-wnt":  2,
-  },
-  fetchBudgetGroupsPending: false,
-  fetchBudgetGroupsError: null,
-  fetchCategoriesPending: false,
-  fetchCategoriesError: null,
-  fetchBudgetDataPending: false,
-  fetchBudgetDataError: null,
 };
 
 export default initialState;

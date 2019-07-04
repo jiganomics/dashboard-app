@@ -9,6 +9,7 @@ import budgetRoute from '../features/budget/route';
 import checkbookRoute from '../features/checkbook/route';
 import documentsRoute from '../features/documents/route';
 import financeRoute from '../features/finance/route';
+import configurationRoute from '../features/configuration/route';
 
 // NOTE: DO NOT CHANGE the 'childRoutes' name and the declaration pattern.
 // This is used for Rekit cmds to register routes config for new features, and remove config when remove features, etc.
@@ -21,6 +22,7 @@ const childRoutes = [
   checkbookRoute,
   documentsRoute,
   financeRoute,
+  configurationRoute,
 ];
 
 const routes = [{

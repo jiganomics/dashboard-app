@@ -14,6 +14,9 @@ class SidePanel extends Component {
             <Link to="/finances">Finances</Link>
           </li>
           <li>
+            <Link to="/configuration">Configuration</Link>
+          </li>
+          <li>
             <Link to="/budget">Budget</Link>
           </li>
           <li>

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { BudgetHeader, BudgetGroup } from './';
+import { months } from './constants';
 import * as actions from './redux/actions';
 
 class Budget extends Component {
@@ -11,20 +12,46 @@ class Budget extends Component {
     const {
       actions: {
         fetchBudgetGroups,
+        fetchCategories,
+        fetchBudgetData,
       }
     } = this.props;
     fetchBudgetGroups();
+    fetchCategories();
+    fetchBudgetData();
   }
 
   render() {
     const {
       budget: {
         budgetGroups,
+        categories,
+        budgetData,
       },
-      author,
-      text,
-      handleChangeText,
     } = this.props;
+
+    const getCategoryData = (id) => {
+      const data = [];
+      months.map((month, idx) => {
+        data[idx] = budgetData[id] ? {
+          budget: budgetData[id].budget[idx],
+          actual: budgetData[id].actual[idx],
+          diff: budgetData[id].budget[idx] - budgetData[id].actual[idx],
+        } : {
+          budget: 0,
+          actual: 0,
+          diff: 0,
+        };
+      });
+      return data;
+    };
+
+    const getBudgetGroupData = (group) => {
+      const data  = {};
+      group.categories.map((category, idx) => data[category.id] = getCategoryData(category.id) );
+      return data;
+    };
+
     return (
       <div class="budget">
         <table frame="void" align="left" cellspacing="0" cols="53" rules="none" border="0">
@@ -32,9 +59,14 @@ class Budget extends Component {
           <tbody className="mbody">
             <BudgetHeader />
             {
-              budgetGroups.map(group => {
+              budgetData.map(group => {
                 return <BudgetGroup group={group} />
               })
+              /*
+              budgetGroups.map(group => {
+                return <BudgetGroup group={group} data={getBudgetGroupData(group)} />
+              })
+              */
             }
           </tbody>
         </table>

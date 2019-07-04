@@ -1,9 +1,9 @@
 import Transaction from "../models/transaction";
 
 export const getTransactions = (req, res) => {
-    Transaction.find((err, transaction) => {
+    Transaction.find({ date: /.*2010/i }, (err, doc) => {
         if (err) return res.json({ success: false, error: err });
-        return res.json({ success: true, data: transaction });
+        return res.json({ success: true, data: doc });
     });
 };
 
